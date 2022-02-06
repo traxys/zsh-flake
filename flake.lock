@@ -1,0 +1,149 @@
+{
+  "nodes": {
+    "dotacat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1621958012,
+        "narHash": "sha256-GaXnSxYVZJQqND4W6lw9XLH1cmBMWhuRn7MCUcmFCdg=",
+        "ref": "master",
+        "rev": "7a6284166f0e6cc91fa19ece5b8dce96bfd1e561",
+        "revCount": 25,
+        "type": "git",
+        "url": "https://gitlab.scd31.com/stephen/dotacat.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://gitlab.scd31.com/stephen/dotacat.git"
+      }
+    },
+    "fast-syntax-highlighting": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1637980444,
+        "narHash": "sha256-pohel0LFkb6+CBPOlQXywKHXTbk2Vg36hJqGWSuO6ck=",
+        "owner": "z-shell",
+        "repo": "fast-syntax-highlighting",
+        "rev": "dc231c94eb633f067d05285da4c4d9e148fb23c2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "z-shell",
+        "repo": "fast-syntax-highlighting",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1642700792,
+        "narHash": "sha256-XqHrk7hFb+zBvRg6Ghl+AZDq03ov6OshJLiSWOoX5es=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "846b2ae0fc4cc943637d3d1def4454213e203cba",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "naersk": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1639947939,
+        "narHash": "sha256-pGsM8haJadVP80GFq4xhnSpNitYNQpaXk4cnA796Cso=",
+        "owner": "nix-community",
+        "repo": "naersk",
+        "rev": "2fc8ce9d3c025d59fee349c1f80be9785049d653",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "naersk",
+        "type": "github"
+      }
+    },
+    "nix-zsh-completions": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1614026477,
+        "narHash": "sha256-TWgo56l+FBXssOYWlAfJ5j4pOHNmontOEolcGdihIJs=",
+        "owner": "spwhitt",
+        "repo": "nix-zsh-completions",
+        "rev": "468d8cf752a62b877eba1a196fbbebb4ce4ebb6f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "spwhitt",
+        "repo": "nix-zsh-completions",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1643805626,
+        "narHash": "sha256-AXLDVMG+UaAGsGSpOtQHPIKB+IZ0KSd9WS77aanGzgc=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "554d2d8aa25b6e583575459c297ec23750adb6cb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "powerlevel10k": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1643744340,
+        "narHash": "sha256-DLiKH12oqaaVChRqY0Q5oxVjziZdW/PfnRW1fCSCbjo=",
+        "owner": "romkatv",
+        "repo": "powerlevel10k",
+        "rev": "8a676a9157d2b0e00e88d06456ac7317f11c0317",
+        "type": "github"
+      },
+      "original": {
+        "owner": "romkatv",
+        "repo": "powerlevel10k",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "dotacat": "dotacat",
+        "fast-syntax-highlighting": "fast-syntax-highlighting",
+        "flake-utils": "flake-utils",
+        "naersk": "naersk",
+        "nix-zsh-completions": "nix-zsh-completions",
+        "nixpkgs": "nixpkgs",
+        "powerlevel10k": "powerlevel10k",
+        "zsh-nix-shell": "zsh-nix-shell"
+      }
+    },
+    "zsh-nix-shell": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1628023704,
+        "narHash": "sha256-WNa8RljYhkOWk7AZbdTOvYhWw1fR8PjFxH/tnUCbems=",
+        "owner": "chisui",
+        "repo": "zsh-nix-shell",
+        "rev": "f8574f27e1d7772629c9509b2116d504798fe30a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "chisui",
+        "repo": "zsh-nix-shell",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
