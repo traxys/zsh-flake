@@ -72,6 +72,11 @@
               if [ -f "$HOME/.zvars" ]; then
                 source "$HOME/.zvars"
               fi
+
+              if [ -f "$HOME/.localrc.sh" ]; then
+                source "$HOME/.localrc.sh"
+              fi
+
               ${pkgs.fortune}/bin/fortune \
                 | ${pkgs.cowsay}/bin/cowsay \
                 | ${dotacat}/bin/dotacat
