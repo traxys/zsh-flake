@@ -85,7 +85,6 @@
             cat = "${pkgs.bat}/bin/bat -p";
             ls = "${pkgs.exa}/bin/exa --icons";
             py3 = "nix-shell -p python3 python3.pkgs.matplotlib --run python3";
-            ssh = "kitty +kitten ssh";
             ns = "nix-shell";
           };
         };
