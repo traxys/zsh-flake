@@ -19,11 +19,11 @@
     "fast-syntax-highlighting": {
       "flake": false,
       "locked": {
-        "lastModified": 1637980444,
-        "narHash": "sha256-pohel0LFkb6+CBPOlQXywKHXTbk2Vg36hJqGWSuO6ck=",
+        "lastModified": 1644551269,
+        "narHash": "sha256-1KB1jH0pH9AIbTPGW9A63LTMCmE/yzAdkhO7MOF9GTE=",
         "owner": "z-shell",
         "repo": "fast-syntax-highlighting",
-        "rev": "dc231c94eb633f067d05285da4c4d9e148fb23c2",
+        "rev": "f468d78e3002748518fbbc2767f69493daa9ce93",
         "type": "github"
       },
       "original": {
@@ -34,11 +34,11 @@
     },
     "flake-utils": {
       "locked": {
-        "lastModified": 1642700792,
-        "narHash": "sha256-XqHrk7hFb+zBvRg6Ghl+AZDq03ov6OshJLiSWOoX5es=",
+        "lastModified": 1644229661,
+        "narHash": "sha256-1YdnJAsNy69bpcjuoKdOYQX0YxZBiCYZo4Twxerqv7k=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "846b2ae0fc4cc943637d3d1def4454213e203cba",
+        "rev": "3cecb5b042f7f209c56ffd8371b2711a290ec797",
         "type": "github"
       },
       "original": {
@@ -49,9 +49,7 @@
     },
     "naersk": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
         "lastModified": 1639947939,
@@ -85,11 +83,25 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1643805626,
-        "narHash": "sha256-AXLDVMG+UaAGsGSpOtQHPIKB+IZ0KSd9WS77aanGzgc=",
+        "lastModified": 1644486793,
+        "narHash": "sha256-EeijR4guVHgVv+JpOX3cQO+1XdrkJfGmiJ9XVsVU530=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "1882c6b7368fd284ad01b0a5b5601ef136321292",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1644525281,
+        "narHash": "sha256-D3VuWLdnLmAXIkooWAtbTGSQI9Fc1lkvAr94wTxhnTU=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "554d2d8aa25b6e583575459c297ec23750adb6cb",
+        "rev": "48d63e924a2666baf37f4f14a18f19347fbd54a2",
         "type": "github"
       },
       "original": {
@@ -102,11 +114,11 @@
     "powerlevel10k": {
       "flake": false,
       "locked": {
-        "lastModified": 1643744340,
-        "narHash": "sha256-DLiKH12oqaaVChRqY0Q5oxVjziZdW/PfnRW1fCSCbjo=",
+        "lastModified": 1644219529,
+        "narHash": "sha256-Y7geTJhUVcgcbS1Xf73pLgch/4W2sVlVZeeZSiofS1c=",
         "owner": "romkatv",
         "repo": "powerlevel10k",
-        "rev": "8a676a9157d2b0e00e88d06456ac7317f11c0317",
+        "rev": "a83e53005fcc32f1a1b979ba0d6a18f225aa5d4d",
         "type": "github"
       },
       "original": {
@@ -122,7 +134,7 @@
         "flake-utils": "flake-utils",
         "naersk": "naersk",
         "nix-zsh-completions": "nix-zsh-completions",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
         "powerlevel10k": "powerlevel10k",
         "zsh-nix-shell": "zsh-nix-shell"
       }
