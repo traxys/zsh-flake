@@ -98,7 +98,7 @@
             text = ''
               #!/usr/bin/env bash
 
-              set -- "$${@/#/nixpkgs#}"
+              set -- "''${@/#/nixpkgs#}"
               nix shell "$@"
             '';
             executable = true;
