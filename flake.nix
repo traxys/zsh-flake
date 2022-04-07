@@ -38,7 +38,7 @@
           root = inputs.dotacat;
         };
       in
-      rec {
+      {
         programs.zsh = {
           enable = true;
           enableCompletion = true;
@@ -77,7 +77,7 @@
                 source "$HOME/.localrc.sh"
               fi
 
-              export PATH="${home.homeDirectory}/bin:$PATH"
+              export PATH="${config.home.homeDirectory}/bin:$PATH"
 
               ${pkgs.fortune}/bin/fortune \
                 | ${pkgs.cowsay}/bin/cowsay \
