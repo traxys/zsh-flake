@@ -38,7 +38,7 @@
           root = inputs.dotacat;
         };
       in
-      {
+      rec {
         programs.zsh = {
           enable = true;
           enableCompletion = true;
@@ -77,6 +77,8 @@
                 source "$HOME/.localrc.sh"
               fi
 
+              export PATH="${home.homeDirectory}/bin:$PATH"
+
               ${pkgs.fortune}/bin/fortune \
                 | ${pkgs.cowsay}/bin/cowsay \
                 | ${dotacat}/bin/dotacat
@@ -85,7 +87,6 @@
             cat = "${pkgs.bat}/bin/bat -p";
             ls = "${pkgs.exa}/bin/exa --icons";
             py3 = "nix-shell -p python3 python3.pkgs.matplotlib --run python3";
-            ns = "nix-shell";
           };
         };
 
@@ -93,6 +94,15 @@
           ".powerlevel10k".source = inputs.powerlevel10k;
           ".zprofile".source = ./zprofile;
           ".p10k.zsh".source = ./p10k.zsh;
+          "bin/ns" = {
+            text = ''
+              #!/usr/bin/env bash
+
+              set -- "$\{@/#/nixpkgs#}"
+              nix shell "$@"
+            '';
+            executable = true;
+          };
         };
       };
   });
