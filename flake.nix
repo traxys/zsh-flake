@@ -95,19 +95,20 @@
             };
           };
 
-          home.file = {
-            ".powerlevel10k".source = inputs.powerlevel10k;
-            ".zprofile".source = ./zprofile;
-            ".p10k.zsh".source = ./p10k.zsh;
-            "bin/ns" = {
-              text = ''
-                #!/usr/bin/env bash
+        };
 
-                set -- "''${@/#/nixpkgs#}"
-                nix shell "$@"
-              '';
-              executable = true;
-            };
+        home.file = {
+          ".powerlevel10k".source = inputs.powerlevel10k;
+          ".zprofile".source = ./zprofile;
+          ".p10k.zsh".source = ./p10k.zsh;
+          "bin/ns" = {
+            text = ''
+              #!/usr/bin/env bash
+
+              set -- "''${@/#/nixpkgs#}"
+              nix shell "$@"
+            '';
+            executable = true;
           };
         };
       };
