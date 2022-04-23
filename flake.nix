@@ -73,7 +73,6 @@
                 export PATH="$PATH:$HOME/bin"
                 source ~/.p10k.zsh
                 source ~/.powerlevel10k/powerlevel10k.zsh-theme
-                eval "$(${pkgs.direnv}/bin/direnv hook zsh)"
                 if [ -f "$HOME/.zvars" ]; then
                   source "$HOME/.zvars"
                 fi
