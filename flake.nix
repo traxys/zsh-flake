@@ -11,7 +11,7 @@
       url = "github:nix-community/naersk";
     };
     fast-syntax-highlighting = {
-      url = "github:z-shell/fast-syntax-highlighting";
+      url = "github:z-shell/F-Sy-H";
       flake = false;
     };
     zsh-nix-shell = {
@@ -53,8 +53,8 @@
             };
             plugins = [
               {
-                name = "fast-syntax-highlighting";
-                file = "fast-syntax-highlighting.plugin.zsh";
+                name = "F-Sy-H";
+                file = "f-sy-h.plugin.zsh";
                 src = inputs.fast-syntax-highlighting;
               }
               {
@@ -64,7 +64,7 @@
               }
               {
                 name = "nix-zsh-completions";
-                file = "nix-zsh-completions.plugin.zsh ";
+                file = "nix-zsh-completions.plugin.zsh";
                 src = inputs.nix-zsh-completions;
               }
             ];
