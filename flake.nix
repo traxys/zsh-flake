@@ -54,7 +54,7 @@
             plugins = [
               {
                 name = "F-Sy-H";
-                file = "f-sy-h.plugin.zsh";
+                file = "F-Sy-H.plugin.zsh";
                 src = inputs.fast-syntax-highlighting;
               }
               {
