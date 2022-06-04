@@ -18,10 +18,10 @@
       url = "github:chisui/zsh-nix-shell";
       flake = false;
     };
-    nix-zsh-completions = {
-      url = "github:spwhitt/nix-zsh-completions";
-      flake = false;
-    };
+    #nix-zsh-completions = {
+    #  url = "github:spwhitt/nix-zsh-completions";
+    #  flake = false;
+    #};
     powerlevel10k = {
       url = "github:romkatv/powerlevel10k";
       flake = false;
@@ -62,11 +62,11 @@
                 file = "nix-shell.plugin.zsh";
                 src = inputs.zsh-nix-shell;
               }
-              {
+              /* {
                 name = "nix-zsh-completions";
                 file = "nix-zsh-completions.plugin.zsh";
                 src = inputs.nix-zsh-completions;
-              }
+              } */
             ];
             initExtra =
               ''
