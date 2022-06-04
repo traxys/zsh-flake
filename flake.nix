@@ -44,7 +44,7 @@
           root = inputs.dotacat;
         };
       in {
-        home.packages = [nix-zsh-completions];
+        home.packages = [pkgs.nix-zsh-completions];
         programs = {
           nix-index = {
             enable = true;
