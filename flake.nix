@@ -18,10 +18,6 @@
       url = "github:chisui/zsh-nix-shell";
       flake = false;
     };
-    #nix-zsh-completions = {
-    #  url = "github:spwhitt/nix-zsh-completions";
-    #  flake = false;
-    #};
     powerlevel10k = {
       url = "github:romkatv/powerlevel10k";
       flake = false;
@@ -29,16 +25,26 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils, ... }@inputs: flake-utils.lib.eachDefaultSystem (system: {
-    home-managerModule = { config, lib, pkgs, ... }:
-      let
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+    ...
+  } @ inputs:
+    flake-utils.lib.eachDefaultSystem (system: {
+      home-managerModule = {
+        config,
+        lib,
+        pkgs,
+        ...
+      }: let
         naersk-lib = inputs.naersk.lib."${system}";
         dotacat = naersk-lib.buildPackage {
           pname = "dotacat";
           root = inputs.dotacat;
         };
-      in
-      {
+      in {
+        home.packages = [nix-zsh-completions];
         programs = {
           nix-index = {
             enable = true;
@@ -49,7 +55,7 @@
             enableCompletion = true;
             oh-my-zsh = {
               enable = true;
-              plugins = [ "git" "wd" "rust" ];
+              plugins = ["git" "wd" "rust"];
             };
             plugins = [
               {
@@ -62,38 +68,31 @@
                 file = "nix-shell.plugin.zsh";
                 src = inputs.zsh-nix-shell;
               }
-              /* {
-                name = "nix-zsh-completions";
-                file = "nix-zsh-completions.plugin.zsh";
-                src = inputs.nix-zsh-completions;
-              } */
             ];
-            initExtra =
-              ''
-                export PATH="$PATH:$HOME/bin"
-                source ~/.p10k.zsh
-                source ~/.powerlevel10k/powerlevel10k.zsh-theme
-                if [ -f "$HOME/.zvars" ]; then
-                  source "$HOME/.zvars"
-                fi
+            initExtra = ''
+              export PATH="$PATH:$HOME/bin"
+              source ~/.p10k.zsh
+              source ~/.powerlevel10k/powerlevel10k.zsh-theme
+              if [ -f "$HOME/.zvars" ]; then
+                source "$HOME/.zvars"
+              fi
 
-                if [ -f "$HOME/.localrc.sh" ]; then
-                  source "$HOME/.localrc.sh"
-                fi
+              if [ -f "$HOME/.localrc.sh" ]; then
+                source "$HOME/.localrc.sh"
+              fi
 
-                export PATH="${config.home.homeDirectory}/bin:$PATH"
+              export PATH="${config.home.homeDirectory}/bin:$PATH"
 
-                ${pkgs.fortune}/bin/fortune \
-                  | ${pkgs.cowsay}/bin/cowsay \
-                  | ${dotacat}/bin/dotacat
-              '';
+              ${pkgs.fortune}/bin/fortune \
+                | ${pkgs.cowsay}/bin/cowsay \
+                | ${dotacat}/bin/dotacat
+            '';
             shellAliases = {
               cat = "${pkgs.bat}/bin/bat -p";
               ls = "${pkgs.exa}/bin/exa --icons";
               py3 = "nix-shell -p python3 python3.pkgs.matplotlib --run python3";
             };
           };
-
         };
 
         home.file = {
@@ -111,5 +110,5 @@
           };
         };
       };
-  });
+    });
 }
